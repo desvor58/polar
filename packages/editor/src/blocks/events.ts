@@ -1,0 +1,44 @@
+import * as Blockly from 'blockly/core'
+
+export function defineEventBlocks() {
+  Blockly.Blocks['event_flag_clicked'] = {
+    init(this: Blockly.Block) {
+      this.appendDummyInput().appendField('when ▶ clicked')
+      this.appendStatementInput('BODY')
+      this.setColour(45)
+      this.setDeletable(false)
+      this.setMovable(true)
+    }
+  }
+
+  Blockly.Blocks['event_key_pressed'] = {
+    init(this: Blockly.Block) {
+      this.appendDummyInput()
+        .appendField('when')
+        .appendField(new Blockly.FieldDropdown([
+          ['space', ' '],
+          ['up arrow', 'ArrowUp'],
+          ['down arrow', 'ArrowDown'],
+          ['left arrow', 'ArrowLeft'],
+          ['right arrow', 'ArrowRight'],
+          ['a', 'a'],
+          ['b', 'b'],
+          ['c', 'c'],
+          ['d', 'd'],
+          ['e', 'e'],
+          ['enter', 'Enter']
+        ]), 'KEY')
+        .appendField('key pressed')
+      this.appendStatementInput('BODY')
+      this.setColour(45)
+    }
+  }
+
+  Blockly.Blocks['event_sprite_clicked'] = {
+    init(this: Blockly.Block) {
+      this.appendDummyInput().appendField('when this sprite clicked')
+      this.appendStatementInput('BODY')
+      this.setColour(45)
+    }
+  }
+}

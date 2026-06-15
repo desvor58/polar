@@ -1,0 +1,11 @@
+{
+  "name": "polar",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter @polar/editor dev",
+    "dev:server": "pnpm --filter @polar/server dev",
+    "build": "pnpm --filter @polar/editor build && pnpm --filter @polar/server build",
+    "docs": "mkdocs serve",
+    "docs:build": "mkdocs build"
+  }
+}
